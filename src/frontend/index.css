@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/assets/fonts/PlayfairDisplay.woff2') format('woff2');
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/assets/fonts/DMSans.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --ivory: #F3EFEA;
+    --charcoal: #1B1B1B;
+    --walnut: #6A4E3B;
+    --bronze: #B89A6A;
+    --stone: #D6D2CC;
+    --stone-light: #E8E4E0;
+
+    --radius: 0rem;
+    --background: 0.954 0.008 80;
+    --foreground: 0.149 0 0;
+    --card: 0.848 0.008 80;
+    --card-foreground: 0.149 0 0;
+    --popover: 0.954 0.008 80;
+    --popover-foreground: 0.149 0 0;
+    --primary: 0.394 0.062 50.8;
+    --primary-foreground: 0.954 0.008 80;
+    --secondary: 0.848 0.008 80;
+    --secondary-foreground: 0.149 0 0;
+    --muted: 0.908 0.007 80;
+    --muted-foreground: 0.5 0.005 80;
+    --accent: 0.667 0.072 65.5;
+    --accent-foreground: 0.954 0.008 80;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.848 0.008 80;
+    --input: 0.848 0.008 80;
+    --ring: 0.667 0.072 65.5;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.954 0.008 80;
+    --sidebar-foreground: 0.149 0 0;
+    --sidebar-primary: 0.394 0.062 50.8;
+    --sidebar-primary-foreground: 0.954 0.008 80;
+    --sidebar-accent: 0.848 0.008 80;
+    --sidebar-accent-foreground: 0.149 0 0;
+    --sidebar-border: 0.848 0.008 80;
+    --sidebar-ring: 0.667 0.072 65.5;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.75;
+    background-color: var(--ivory);
+    color: var(--charcoal);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    line-height: 1.2;
+    color: var(--charcoal);
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .img-zoom {
+    overflow: hidden;
+  }
+
+  .img-zoom img {
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .img-zoom:hover img {
+    transform: scale(1.05);
+  }
+
+  .btn-bronze {
+    border: 1px solid var(--bronze);
+    color: var(--charcoal);
+    background: transparent;
+    padding: 0.75rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-bronze:hover {
+    background-color: var(--walnut);
+    border-color: var(--walnut);
+    color: var(--ivory);
+  }
+
+  .btn-walnut {
+    border: 1px solid var(--walnut);
+    color: var(--ivory);
+    background: var(--walnut);
+    padding: 0.75rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-walnut:hover {
+    background-color: var(--charcoal);
+    border-color: var(--charcoal);
+  }
+
+  .section-divider {
+    height: 1px;
+    background: var(--stone);
+    width: 100%;
+  }
+}
